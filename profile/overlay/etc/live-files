@@ -1,0 +1,3 @@
+/etc/init/system/display-manager.service
+/etc/init/system/desktop.service
+/etc/distro-packages

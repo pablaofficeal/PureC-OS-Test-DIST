@@ -1,0 +1,6 @@
+[Unit]
+Description=Login screen (disabled on the live system)
+ConditionPathExists=/nonexistent/live-autologin
+
+[Service]
+ExecStart=/usr/bin/login

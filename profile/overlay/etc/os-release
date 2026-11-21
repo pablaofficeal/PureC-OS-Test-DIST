@@ -1,0 +1,6 @@
+NAME="PureC OS Test DIST"
+ID=purec
+VARIANT="Live"
+VERSION="2.0.0"
+PRETTY_NAME="PureC OS Test DIST 2.0.0"
+HOME_URL="https://github.com/PureC-OS"
