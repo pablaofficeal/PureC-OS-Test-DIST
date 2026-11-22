@@ -8,6 +8,8 @@ files
 git
 init
 installer
+libc
+libpurecrypt
 libgui
 login
 monitor

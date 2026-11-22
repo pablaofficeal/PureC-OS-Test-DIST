@@ -32,6 +32,9 @@ make -j"$jobs" kernel programs
 make -j"$jobs" chocolate-doom
 make -C programs/purec-os-pkg host
 make -C programs/PureC-OS-Core-Programs packages
+make -C video-backend package
+make -C PureC-OS-LibGui package
+cp bin/video-backend/video-backend-*.pkg.tar.gz* bin/libgui/libgui-*.pkg.tar.gz* bin/core-repo/
 
 for p in $(grep -v '^#' "$here/profile/packages.txt" | awk 'NF{print $1}'); do
 	if ! line=$(grep "^$p " Trusted/repository.conf); then
