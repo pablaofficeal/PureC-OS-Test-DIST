@@ -17,6 +17,7 @@ micropython
 net-tools
 pkg
 settings
+strace
 sh
 system
 tcc
