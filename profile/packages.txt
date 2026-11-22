@@ -10,6 +10,7 @@ init
 installer
 libgui
 login
+monitor
 lua
 make
 micropython
