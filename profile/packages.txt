@@ -2,6 +2,7 @@ accounts
 base
 core-tests
 coreutils
+doom
 disk-utils
 files
 git

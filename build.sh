@@ -29,11 +29,16 @@ mkdir -p "$work/repo"
 
 cd "$parent"
 make -j"$jobs" kernel programs
+make -j"$jobs" chocolate-doom
 make -C programs/purec-os-pkg host
 make -C programs/PureC-OS-Core-Programs packages
 
 for p in $(grep -v '^#' "$here/profile/packages.txt" | awk 'NF{print $1}'); do
-	line=$(grep "^$p " Trusted/repository.conf) || { echo "package $p not in Trusted/repository.conf" >&2; exit 1; }
+	if ! line=$(grep "^$p " Trusted/repository.conf); then
+		ls bin/core-repo/"$p"-[0-9]*.pkg.tar.gz >/dev/null 2>&1 && continue
+		echo "package $p not in Trusted/repository.conf or bin/core-repo" >&2
+		exit 1
+	fi
 	rel=$(echo "$line" | awk '{print $2}')
 	cp "Trusted/$rel" "Trusted/$rel.sig" "$work/repo/"
 done
